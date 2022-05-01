@@ -8,10 +8,10 @@
         <version>0.0.1</version>
     </parent>
     <groupId>telran</groupId>
-    <artifactId>charge-monitoring-config-server</artifactId>
+    <artifactId>charge-monitoring-supplier-data</artifactId>
     <version>0.0.1</version>
-    <name>charge-monitoring-config-server</name>
-    <description>charge-monitoring-config-server</description>
+    <name>charge-monitoring-supplier-data</name>
+    <description>charge-monitoring-supplier-data</description>
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>2021.0.2</spring-cloud.version>
@@ -19,7 +19,15 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-binder-kafka</artifactId>
         </dependency>
 
         <dependency>
@@ -27,7 +35,18 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream</artifactId>
+            <scope>test</scope>
+            <classifier>test-binder</classifier>
+            <type>test-jar</type>
+        </dependency>
+        <dependency>
+            <groupId>telran</groupId>
+            <artifactId>charge-monitoring-dto</artifactId>
+            <version>0.0.1</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
